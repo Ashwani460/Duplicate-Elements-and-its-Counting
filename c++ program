@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{ 
+  int n;
+  cout<<"Enter the size of an array";
+  cin>>n;
+  int A[n];
+  int i,x,j,ld;
+  ld=0;
+  cout<<"Enter the elements of sorted array"<<endl;
+  for(i=0;i<n;i++)
+  {
+      cin>>A[i];
+  }     
+  for(i=0;i<n;i++)
+  {
+      if(A[i]==A[i+1] && A[i]!=ld)
+      {
+          cout<<A[i]<<",";
+          ld=A[i];
+      }
+  }
+  for(i=0;i<n-1;i++)
+  {
+      if(A[i]==A[i+1])
+      {
+          j=i+1;
+          while(A[j]==A[i])
+                j++;
+          x=j-i;
+          cout<<A[i]<<"is repeating "<<x<<"times"<<endl;
+          i=j-1;
+      }
+  }
+  
+}
